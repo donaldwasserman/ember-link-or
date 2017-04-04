@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'click-or'
+  name: 'ember-link-or'
 };

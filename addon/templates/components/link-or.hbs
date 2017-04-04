@@ -1,0 +1,9 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{linkText}}
+{{/if}}
+
+{{#if showComponent}}
+  {{component passedComponent componentArg}}
+{{/if}}
