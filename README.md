@@ -1,4 +1,4 @@
-# click-or
+# ember-link-or
 
 This README outlines the details of collaborating on this Ember addon.
 
