@@ -34,6 +34,7 @@ export default Ember.Component.extend({
   component: null,
   componentArg: null,
   showComponent: false,
+  attributeBindings: ['href'],
 
   init() {
     this._super(...arguments);
@@ -64,20 +65,18 @@ export default Ember.Component.extend({
     return (this.get('triggerSize') >= screenSize);
   }),
 
+  href: computed('route', 'size', function() {
+
+  }),
+
   click(e) {
-    if (this.get('isLink')) {
-      console.log('Im like "Hey, whats up? Hello"');
-      this.get('router').transitionTo(this.get('route'), this.get('routeArgs'));
-    }
-
-    if (this.get('showComponent')) {
-
-      if (this.$().is(e.target)) {
-        this.set('showComponent', false);
+    // Handle click events on link itself
+    if (this.$().is(e.target)) {
+      if (!this.get('isLink')) {
+        e.preventDefault();
+        this.toggleProperty('showComponent');
       }
 
-    } else {
-      this.set('showComponent', true);
     }
   }
 
