@@ -45,11 +45,6 @@ export default Ember.Component.extend({
 
   init() {
     this._super(...arguments);
-    // let appConfig = getOwner(this).lookup('config:environment');
-    // let appDefaults = (isEmpty(appConfig['ember-link-or'])) ? appConfig['ember-link-or'] : {} ;
-    // let mq = this.get('_mqs');
-    // assign(mq, appDefaults);
-    // set(this, '_mqs', mq);
     assert('Must provide a valid route', this.get('routeName'));
     assert('Must provide a valid component', this.get('component'));
   },
