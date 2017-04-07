@@ -6,12 +6,15 @@
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": {
+    "name": "Donald Wasserman",
+    "url": "https://github.com/donaldwasserman"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "donaldwasserman/ember-link-or",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
