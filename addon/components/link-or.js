@@ -34,7 +34,7 @@ export default Ember.Component.extend({
   queryParams: null,
   linkText: null,
   component: null,
-  componentArg: null,
+  componentArgs: null,
   showComponent: false,
 
   currentWhen: null,
