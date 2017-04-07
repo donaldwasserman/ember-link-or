@@ -1,7 +1,7 @@
 {
   "name": "ember-link-or",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Render a routeable link at small sizes or a choice of your component at larger ones.",
   "keywords": [
     "ember-addon"
   ],
