@@ -54,7 +54,7 @@ The keywords map to (these are the default Bootstrap media queries):
 
 ## Installation
 
-Todo: Publish to NPM
+`ember install ember-link-or`
 
 ## Running
 
