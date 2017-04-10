@@ -19,7 +19,7 @@ replicated here, there may be some rough patches.8
 ### Basics
 
 ```hbs
-  {{#link-or routeName="alerts", routeArgs=model component="alert-list" componentArgs=model}}<span class="fa fa-alert"></span> Alerts {{/link-or}}
+  {{#link-or routeName="alerts" routeArgs=model component="alert-list" componentArgs=model}}<span class="fa fa-alert"></span> Alerts {{/link-or}}
 ```
 The `routeName` and `routeArgs` correspond to the first two params of `{{link-to route id}}`.
 
