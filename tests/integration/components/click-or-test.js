@@ -1,25 +1,55 @@
 import { moduleForComponent, test } from 'ember-qunit';
+import Ember from 'ember';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('click-or', 'Integration | Component | click or', {
-  integration: true
+
+const screenSizeStub = Ember.Service.extend({
+  width: 770
 });
 
-test('it renders', function(assert) {
+const routingStub = Ember.Service.extend({
+   isActiveForRoute() {
+     return false;
+   },
+   currentState: false,
+   generateURL(routeName) {
+     return `/${routeName}`;
+   }
+});
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+moduleForComponent('click-or', 'Integration | Component | click or', {
+  integration: true,
+  beforeEach: function() {
+    this.register('service:screen', screenSizeStub);
+    this.register('service:-routing', routingStub);
+    this.inject.service('screen', { as: 'screen' });
+    this.inject.service('-routing', { as: '-routing' });
+  }
+});
 
-  this.render(hbs`{{click-or}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
+/* TODO: figure out how to test HREF functionality
+test('component renders with proper href functionality', function(assert) {
   this.render(hbs`
-    {{#click-or}}
-      template block text
-    {{/click-or}}
-  `);
+      {{#link-or routeName="dummy" component="test-component"}}Click Me{{/link-or}}
+    `);
+    assert.equal(this.$().text().trim(), 'Click Me', 'Block params should render');
+    assert.equal(this.$().attr('href'), '#', 'href should equal # above media query');
 
-  assert.equal(this.$().text().trim(), 'template block text');
+
+    this.set('screen.width', 500);
+    assert.equal(this.$().attr('href'), '/dummy', 'href should equal route at lower ones');
+}); */
+
+test('component handles click events and renders component', function(assert) {
+  this.render(hbs`
+      {{#link-or routeName="dummy" component="test-component"}}Click Me{{/link-or}}
+    `);
+
+  this.$().click();
+  assert.ok(this.$().find('#passed-component'), 'passed component should render');
+
+  this.$('#passed-component').click();
+  assert.ok(this.$().find('#passed-component'), 'passed component should handle its own clicks');
+
+
 });

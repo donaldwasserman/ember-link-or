@@ -4,11 +4,7 @@ import layout from '../templates/components/link-or';
 const { inject:
         { service },
         computed,
-        getOwner,
-        isEmpty,
-        assign,
         assert,
-        set,
         get,
         runInDebug
       } = Ember;
@@ -110,7 +106,6 @@ export default Ember.Component.extend({
         assert('You attempted to define a `{{link-or "' + routeName + '"}}` but did not pass the parameters required for generating its dynamic segments. ' + e.message);
       }
     });
-
     return routing.generateURL(routeName, routeArgs, resolvedQueryParams);
   }),
 

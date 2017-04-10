@@ -27,10 +27,21 @@ Pass the name of a valid component in `component` and provide any arguments via 
 
 ### Media Query Support
 
-By default, the addon renders the component provided at screen sizes below 768px.
+By default, the addon renders the component provided at screen sizes below 768px,
+by setting the default `size` parameter to `xsmall`.
 
 You can change the value by providing a `xsmall`, `small`, `medium`, keywords, or a pixel
 value.
+
+```hbs
+  {{#link-or routeName="alerts" component="alert-list" size="medium"}} Link {{/link-or}}
+```
+
+or
+
+```hbs
+  {{#link-or routeName="alerts" component="alert-list" size="989"}} Link {{/link-or}}
+```
 
 The keywords map to (these are the default Bootstrap media queries):
 
