@@ -1,6 +1,6 @@
 {
   "name": "ember-link-or",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Render a routeable link at small sizes or a choice of your component at larger ones",
   "keywords": [
     "ember-addon",
