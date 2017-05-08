@@ -1,4 +1,5 @@
 # ember-link-or
+[![Ember Observer Score](https://emberobserver.com/badges/ember-link-or.svg)](https://emberobserver.com/addons/ember-link-or)
 
 This draft addon is an example of how to accomplish having a link for large
 screens that renders a component, but on smaller screens links to a seperate route.
